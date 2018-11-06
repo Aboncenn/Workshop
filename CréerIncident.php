@@ -17,10 +17,13 @@
           </textarea>
       </p>
     <label for="constat"> Joindre Constat à l'amiable:</label>
-    <input type="hidden"
+    <input type="hidden" name="MAX_FILE_SIZE" value="2000"/>
     <input type ="file" name="constat" id="constat"/>
     <br/>
+    <label for="titre"> Titre du fichier </label><br/>
+    <<input type=" text" name="titre" value="Titre du fichier" id="titre">
     <input type ="button" value="Demander un constat à l'amiable"/>
     <input type="submit" value ="Envoyer"/>
   </fieldset>
 </form>
+

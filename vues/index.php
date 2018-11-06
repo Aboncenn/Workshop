@@ -1,4 +1,6 @@
 <?php
+/*
+AFFICHE LE FORM DE CONNEXION
 
-phpinfo();
+*/
 ?>

@@ -22,5 +22,5 @@ Annuler rendez-vous (livio fait )
 Exporter données liés au bien (livio fait )
 Voir information contrats (livio)
 Demande de contrat à l’amiable (livio fait )
-Mandater un prestataire
+Mandater un prestataire( livio fait)
 Envoyer le contrat rempli avec les documents (livio fait )

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Créer un incident </title>
+    <meta charset="UTF-8"/>
+  </head>
+    <body>
+      <h1> Déclarer votre incident </h1>
+      <form method="POST" action="declarerIncident.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>L'incident</legend>
+            <p>
+              Quels est le bien concernée? :<br />
+              <input type="radio" name="bien" value="voiture" id="voiture"/>
+              <label for="voiture"> Voiture </label><br/>
+              <input type="radio" name="bien" value="moto" id="moto"/>
+              <label for="moto"> moto </label><br/>
+              <input type="radio" name="bien" value="scooter" id="scooter"/>
+              <label for="scooter"> Scooter </label><br/>
+
+            </p>
+            <p>
+                <label for="description"> Description de l'incident </label><br/>
+                <textarea name="description" id ="description" rows="10" cols="50">
+                </textarea>
+            </p>
+          <label for="constat"> Joindre Constat à l'amiable:</label>
+          <input type ="file" name="constat" id="constat"/>
+          <br/>
+          <a href ="constat-amiable-auto.pdf" target="_blank"> Télécharger le constat à l'amiable </a>
+          <br/>
+          <input type ="button" value="Demander un constat à l'amiable"/>
+          <input type="submit" value ="Envoyer"/>
+        </fieldset>
+      </form>
+    </body>
+</html>

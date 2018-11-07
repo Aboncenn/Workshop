@@ -1,4 +1,5 @@
 <?php
+require('../db/header.php');
 /*
 Affiche la totalité de la blockchain
 */

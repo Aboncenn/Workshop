@@ -1,4 +1,5 @@
 <?php
+require('../db/header.php');
 /*
 FORM DE CREATION COMPTE CLIENTS ET PRESTATAIRES
 ONLY ASSUREUR

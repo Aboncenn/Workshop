@@ -1,4 +1,5 @@
 <?php
+require('../db/header.php');
 /*
 POUR LIVIO => Ajouter le nom du controller en début de pages
 

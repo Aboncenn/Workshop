@@ -1,4 +1,5 @@
 <?php
+require('../db/header.php');
 /*
 Ajout de nouveaux bien
 

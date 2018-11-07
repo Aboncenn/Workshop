@@ -1,4 +1,5 @@
 <?php
+require('../db/header.php');
 /*
 IF button expertise cliqué
 FORM CREATION DE L'EXPERTISE

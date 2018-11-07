@@ -23,7 +23,6 @@ if(isset($_POST['go'])){
 }
 
 ?>
-
 <body class="login-body">
     <div class=" login-body">
 
@@ -56,6 +55,7 @@ if(isset($_POST['go'])){
 
         </div>
     </div>
-<!-- </body>
-
-</html> -->
+    
+<?php
+  require('../db/footer.php');
+?>

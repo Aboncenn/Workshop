@@ -1,6 +1,7 @@
 <?php
 /* Connexion base de donnée*/
 require('db.php');
+require('session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,11 +10,10 @@ require('db.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <meta name="description" content="">
   <meta name="author" content="team karibou">
-  <title>Amarisk</title>
+  <title>team karibou blockchain</title>
   <!-- CSS  -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
   <script src="../js/bootstrap.min.js"></script>
 
 </head>
-

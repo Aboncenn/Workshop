@@ -5,3 +5,6 @@ ONLY ASSUREUR
 
 */
 ?>
+<div class="container-fluid">
+
+</div>

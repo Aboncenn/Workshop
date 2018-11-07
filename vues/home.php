@@ -14,3 +14,6 @@ IF ASSUREUR
 affiche la home des assureurs
 */
 ?>
+<div class="container-fluid">
+
+</div>

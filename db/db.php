@@ -1,7 +1,7 @@
 <?php
 // Connexion a la base de données
 $host ='localhost';
-$db_name ='workshop';
+$db_name ='workshop2';
 $user ='root';
 $password ='';
 

@@ -5,43 +5,6 @@ AFFICHE LE FORM DE CONNEXION
 
 */
 ?>
-
-
-<!--
-<div class="wrapper">
-  <div class="login is-active">
-    <div class="profile"><i class="fa fa-camera fa-2x"></i></div>
-    <div class="form-element">
-      <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address"/>
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder=" Password"/>
-    </div>
-    <button class="btn-login">login</button>
-  </div>
-  
-  <div class="register down">
-    <div class="form-element">
-      <span><i class="fa fa-user"></i></span><input type="text" placeholder="Full Name"/>
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address"/>
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Password"/>
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Re-Enter Password"/>
-    </div>
-    <button class="btn-register">register</button>
-  </div>
-
-  <div class="login-view-toggle">
-    <div class="sign-up-toggle is-active">Don't have an account? <a href="#">Sign Up</a></div>
-    <div class="login-toggle">Already have an account? <a href="#">Login</a></div>
-  </div>
-</div>
--->
 <html>
 
 <head>
@@ -56,7 +19,7 @@ over-ride "Weak" message, show font in dark grey
 
 .progress-bar {
     color: #333;
-} 
+}
 
 /*
 Reference:
@@ -115,7 +78,7 @@ form[role=login] {
 	form[role=login] > div {
 		text-align: center;
 	}
-	
+
 .form-links {
 	text-align: center;
 	margin-top: 1em;
@@ -138,7 +101,7 @@ form[role=login] {
                 <section class="login-form">
                     <form method="post" action="#" role="login">
                         <!-- <h3 class="text-center">AXA Assurance</h3> -->
-                        
+
                         <img src="https://image.flaticon.com/icons/svg/236/236831.svg" width="128vw" class="img-responsive" alt="" />
                         <input type="email" name="email" placeholder="Email" required class="form-control input-lg"/>
                         <input type="password" class="form-control input-lg" id="password" placeholder="Password"
@@ -151,7 +114,7 @@ form[role=login] {
 
                     </form>
 
-                    
+
                 </section>
             </div>
 

@@ -16,4 +16,4 @@ require('db.php');
   <script src="../js/bootstrap.min.js"></script>
 
 </head>
-<body>
+

@@ -6,8 +6,8 @@ if(isset($_POST['go'])){
 }
 ?>
 
-
-    <div class="container">
+<body class="login-body">
+    <div class=" login-body">
 
         <div class="row" id="pwd-container">
             <div class="col-md-4"></div>
@@ -38,6 +38,6 @@ if(isset($_POST['go'])){
 
         </div>
     </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

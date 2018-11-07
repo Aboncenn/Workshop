@@ -3,8 +3,9 @@ require('../db/header.php');
 /*
 Ajout de nouveaux bien
 
-ONLY Assureur
 */
+$user = $_SESSION['user'];
+if($user == "assureur" ){
 ?>
 <div class="container">
   <div class="card-body">
@@ -39,3 +40,12 @@ ONLY Assureur
   </div>
 
 </div>
+ 
+<?php
+
+}else{
+  header('Location: localhost:8888/Workshop/vues/index.php');
+  exit();
+}
+require('../db/footer.php');
+

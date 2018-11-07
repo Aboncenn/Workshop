@@ -3,6 +3,9 @@ require('../db/header.php');
 /*
 Affiche la totalité de la blockchain
 */
+
+$user = $_SESSION['user'];
+if($user == "client" || $user == "assureur" ){
 ?>
 <div class="container-fluid">
   <table class="table table-dark">
@@ -37,3 +40,10 @@ Affiche la totalité de la blockchain
   </table>
 
 </div>
+<?php
+}else{
+  header('Location: localhost:8888/Workshop/vues/index.php');
+  exit();
+}
+  require('../db/footer.php');
+?>

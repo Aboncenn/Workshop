@@ -2,8 +2,8 @@
 require('../db/header.php');
 ?>
 
-
-    <div class="container">
+<body class="login-body">
+    <div class=" login-body">
 
         <div class="row" id="pwd-container">
             <div class="col-md-4"></div>
@@ -34,6 +34,6 @@ require('../db/header.php');
 
         </div>
     </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

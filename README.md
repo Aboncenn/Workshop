@@ -4,25 +4,23 @@ TODO
 
 Fonctionnalités
 
-Loggin
-UPDATE Données clients
-Remplir un formulaire d'expertise
-Envoyer l'expertise à l'assureur
+Loggin (ludo )
+UPDATE Données clients (livio)
+Remplir un formulaire d'expertise (livio fait )
+Envoyer l'expertise à l'assureur(livio fait )
 Proposer un devis au client
-Mise à jour donnée de la société
-Proposer un rendez-vous à un client
-Déclarer un accident
-Valider l'incident
-Valider l'indemnisation du client
-Clôturer l’incident et l’ajouter à l'historique du bien (BlockChain)
-Ajout de nouveaux biens (BlockChain)
-Voir les informations du contrats et des biens (BlockChain)
-Voir l'expertise
-Accepter un rendez-vous prestataire
-Afficher l'historique des incidents lié à un bien (BlockChain)
+Mise à jour donnée de la société (livio)
+Proposer un rendez-vous à un client (livio fait )
+Déclarer un accident (livio fait )
+Clôturer l’incident et l’ajouter à l'historique du bien
+Ajout de nouveaux biens (livio fait )
+Voir les informations du contrats et des biens (livio fait )
+Voir l'expertise (livio fait)
+Accepter un rendez-vous prestataire (livio)
+Afficher l'historique des incidents lié à un bien (livio)
 Annuler rendez-vous
-Exporter données liés au bien
-Voir information contrats
-Demande de contrat à l’amiable
+Exporter données liés au bien (livio fait )
+Voir information contrats (livio)
+Demande de contrat à l’amiable (livio fait )
 Mandater un prestataire
-Envoyer le contrat rempli avec les documents
+Envoyer le contrat rempli avec les documents (livio fait )

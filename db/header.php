@@ -12,7 +12,8 @@ require('db.php');
   <title>Amarisk</title>
   <!-- CSS  -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
   <script src="../js/bootstrap.min.js"></script>
-  <script src="../css/style.css"></script>
+
 </head>
 <body>

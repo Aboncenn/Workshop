@@ -126,5 +126,3 @@ form[role=login] {
 </body>
 
 </html>
-?>
-<?php

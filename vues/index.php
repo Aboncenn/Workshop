@@ -1,7 +1,6 @@
 <?php
 require('../db/header.php');
 ?>
-
 <body class="login-body">
     <div class=" login-body">
 
@@ -34,6 +33,7 @@ require('../db/header.php');
 
         </div>
     </div>
-<!-- </body>
-
-</html> -->
+    
+<?php
+  require('../db/footer.php');
+?>

@@ -3,8 +3,9 @@ require('../db/header.php');
 /*
 Ajout de nouveaux bien
 
-ONLY Assureur
 */
+$user = $_SESSION['user'];
+if($user == "assureur" ){
 ?>
 <div class="container-fluid">
   <form>
@@ -23,5 +24,11 @@ ONLY Assureur
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
 </div>
+<?php
+
+}else{
+  header('Location: localhost:8888/Workshop/vues/index.php');
+  exit();
+}
+require('../db/footer.php');

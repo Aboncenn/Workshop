@@ -18,7 +18,7 @@ Voir les informations du contrats et des biens (livio fait )
 Voir l'expertise (livio fait)
 Accepter un rendez-vous prestataire (livio)
 Afficher l'historique des incidents lié à un bien (livio)
-Annuler rendez-vous
+Annuler rendez-vous (livio fait )
 Exporter données liés au bien (livio fait )
 Voir information contrats (livio)
 Demande de contrat à l’amiable (livio fait )

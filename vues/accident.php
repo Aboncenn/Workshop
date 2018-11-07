@@ -1,10 +1,12 @@
 <?php
 require('../db/header.php');
 /*
-IF CLIENT
-
 FORM déclaration accident
 */
+
+$user = $_SESSION['user'];
+if($user == "client" ){
+
 ?>
 <div class="container-fluid">
   <form>
@@ -25,6 +27,8 @@ FORM déclaration accident
   </form>
 
   <?php
+}elseif($user == "assureur" ){
+
   /*
   IF ASSUREUR
 
@@ -53,4 +57,9 @@ FORM déclaration accident
   </form>
 <?php
 
+}else{
+  header('Location: localhost:8888/Workshop/vues/index.php');
+  exit();
+}
+require('../db/footer.php');
 ?>

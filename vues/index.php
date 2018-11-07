@@ -1,5 +1,9 @@
 <?php
 require('../db/header.php');
+session_start ();
+if(isset($_POST['go'])){
+
+}
 ?>
 
 

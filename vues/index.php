@@ -34,6 +34,6 @@ require('../db/header.php');
 
         </div>
     </div>
-<!-- </body>
+</body>
 
-</html> -->
+</html>

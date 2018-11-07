@@ -10,7 +10,6 @@
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
     <div class="row">
-
         <div class="col-4 bien">
             <div class="card">
                 <a href="">

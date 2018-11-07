@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Formulaire expertise </title>
+    <meta charset="UTF-8"/>
+  </head>
+    <body>
+      <h1> Remplir un formulaire d'expertise </h1>
+      <form method="POST" action="formulaire_expertise.php" enctype="multipart/form-data">
+    <!--    <fieldset>
+            <legend>Recapitulatif</legend>
+            <p>
+              <label for="nomClient"> Client </label>
+              <input type="text" name="nomClient"/>
+            </p>
+            <p>
+              <label for="proprietaire_V"> Propriétaire </label>
+              <input type="text" name="proprietaire_V"/>
+            </p>
+            <p>
+              <label for="lieu"> Lieu de réalisation </label>
+              <input type="text" name="lieu"/>
+            </p>
+            <p>
+              <label for="personne_P"> Nom et Prenom de la personne présente</label>
+              <input type="text" name="personne_P"/>
+            </p>
+            <p>
+              <label for="personne_P"> Nom et Prenom de la personne présente</label>
+              <input type="text" name="personne_P"/>
+            </p>
+            <p>
+              <label for="conformite_V"> Conformite Vehicule </label><br/>
+              <textarea name="conformite_V" id ="conformite_V" rows="10" cols="50">
+              </textarea>
+            </p>
+            <p>
+              <label for="non_conformite_V"> Non Conformité du véhicule</label>
+              <input type="text" name="non_conformite_V"/>
+            </p>
+            <p>
+              <label for="point_V"> Point de vigilance </label><br/>
+              <textarea name="point_V" id ="point_V" rows="10" cols="50">
+              </textarea>
+            </p>
+
+            </fieldset>
+            <fieldset>
+              <legend> Identification du vehicule</legend>
+              <p>
+                <label for="marque_V"> Marque </label>
+                <input type="text" name="marque_V"/>
+              </p>
+              <p>
+                <label for="modele_V"> Modèle </label>
+                <input type="text" name="modele_V"/>
+              </p>
+              <p>
+                <label for="miseEnCirculation"> Date de mise en Circulation </label>
+                <input type="text" name="miseEnCirculation"/>
+              </p>
+              <p>
+                <label for="puissance_Fiscale"> Puissance Fiscale </label>
+                <input type="number" name="puissance_Fiscale"/>
+              </p>
+              <p>
+                <label for="kilometrage"> kilemotrage </label>
+                <input type="text" name="kilometrage"/>
+              </p>
+
+
+
+            </fieldset>-->
+          <label for="constat"> Joindre rapport d'expertise:</label>
+          <input type ="file" name="expertise" id="constat"/>
+          <br/>
+          <input type="submit" value ="Envoyer"/>
+
+      </form>
+    </body>
+</html>

@@ -13,14 +13,9 @@ if (!empty($_FILES)){
     {
       if(move_uploaded_file($file_tmp_name,$file_dest))
       {
-        //Insertion dans la base
-        $req = $db->prepare('INSERT INTO files(name,file_url) VALUES(?,?) ');
-        $req->execute(array($file_name,$file_dest));
-        //Récupération dans la base
-        $recuperationContrat = $db->query('SELECT name, file_url FROM files');
-        while($data = $recuperationContrat->fetch()){
-          echo $data['name'].' : '.'<a href="'.$data['file_url'].'"> Télécharger'.$data['name'].'</a><br/>';
-        }
+
+          $req = $db->prepare('INSERT INTO files(name,file_url,type) VALUES(?,?) ');
+          $req->execute(array($file_name,$file_dest,'ContratAmiable'));
 
         echo 'Le fichier a bien été envoyés';
       } else {

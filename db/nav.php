@@ -1,8 +1,9 @@
+<?php
 
-
+?>
 <div class="card text-center">
   <div class="card-header">
-    
+
     <ul class="nav nav-tabs card-header-tabs">
       <li>
       <img class="navbar-brand" src="../img/axa.png" width=32vw href="#"/>

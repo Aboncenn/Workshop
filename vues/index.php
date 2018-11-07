@@ -1,9 +1,10 @@
 <?php
 require('../db/header.php');
+session_destroy();
 session_start ();
 if(isset($_POST['go'])){
-   $mailconnect = htmlspecialchars($_POST['email']);
-   $mdpconnect = sha1($_POST['password']);
+   $mailconnect = isset($_POST['email']);
+   $mdpconnect = isset($_POST['password']);
    if(!empty($mailconnect) AND !empty($mdpconnect)) {
       $requser = $db->prepare("SELECT * FROM user WHERE mail = ? AND mot_de_passe = ?");
       $requser->execute(array($mailconnect, $mdpconnect));
@@ -22,6 +23,10 @@ if(isset($_POST['go'])){
    }
 }
 
+if(isset($erreur)) {
+   echo '<font color="red">'.$erreur."</font>";
+}
+
 ?>
 <body class="login-body">
     <div class=" login-body">
@@ -36,7 +41,7 @@ if(isset($_POST['go'])){
 
                         <img src="https://image.flaticon.com/icons/svg/236/236831.svg" width="128vw" class="img-responsive" alt="" />
                         <input type="email" name="email" placeholder="Email" required class="form-control input-lg"/>
-                        <input type="password" class="form-control input-lg" id="password" placeholder="Password"
+                        <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password"
                             required="" />
                         <div class="pwstrength_viewport_progress"></div>
                         <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
@@ -55,7 +60,7 @@ if(isset($_POST['go'])){
 
         </div>
     </div>
-    
+
 <?php
   require('../db/footer.php');
 ?>

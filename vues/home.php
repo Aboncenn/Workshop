@@ -44,13 +44,11 @@ if($user == "1" ){ // Home client
   <div class="row">
     <?php
 
-    $sql="SELECT * FROM user,incident, bien,contrat WHERE user.id = incident.id_user AND contrat.id_assureur ='$id' AND bien.id = contrat.id_biens AND incident.id_user = contrat.id_user GROUP BY contrat.id_biens ";
+    $sql="SELECT * FROM user,incident, bien,contrat WHERE user.id = incident.id_user AND contrat.id_assureur ='$id' AND bien.id = contrat.id_biens AND incident.id_user = contrat.id_user ";//GROUP BY contrat.id_biens ";
     $req = $db->prepare($sql);
     $req->execute();
     $res = $req->fetchAll(PDO::FETCH_ASSOC);
     foreach ($res as $key => $value) {
-        var_dump($value);
-
       $id = $value['id'];
       $nom = $value['nom'];
       $data = $value['date'];
@@ -60,7 +58,7 @@ if($user == "1" ){ // Home client
           <div class="card">
 
                 <div class="row">
-                    <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
+                    <p> <b><?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?></b><a href="accident.php?id=<?php echo $id; ?>"> <button class="btn btn-primary"> répondre </button></a> </p>
                 </div>
                 <div class="row">
                   <a href="../controller/validation_blockchain.php?id=<?php echo $id; ?>">

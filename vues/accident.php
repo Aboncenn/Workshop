@@ -100,7 +100,10 @@ if($user == "1" ){ // Home client
 </div>
 <?php
 }elseif($user == "3" ){ // prestataire
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08a86bc98c0cc45f641bf19b30b4ca0a55de96b8
     $sql="SELECT * FROM bien,incident WHERE incident.id ='$id' and incident.id = bien.id";
     $req = $db->prepare($sql);
     $req->execute();

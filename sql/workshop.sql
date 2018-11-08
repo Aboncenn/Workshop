@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 08, 2018 at 03:10 PM
+-- Generation Time: Nov 08, 2018 at 03:29 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -52,7 +52,11 @@ INSERT INTO `bien` (`id`, `intitule`, `date_achat`, `id_type_bien`) VALUES
 CREATE TABLE `blockchain` (
   `id` int(11) NOT NULL,
   `Intitule_bien` varchar(30) NOT NULL,
-  `Date_achat` date NOT NULL
+  `Date_achat` date NOT NULL,
+  `description` text NOT NULL,
+  `acte_prestation` text NOT NULL,
+  `nom_prestataires` varchar(20) NOT NULL,
+  `Dates` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

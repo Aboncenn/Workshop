@@ -9,11 +9,11 @@ $id = $_SESSION['id'];
 if($user == "1" ){ // Home client
 ?>
 <div class="container">
-  <div class="card-body">
-      <h1 class="card-title text-center">Mes Biens</h1>
-  </div>
-  <div class="row">
-    <?php
+    <div class="card-body">
+        <h1 class="card-title text-center">Mes Biens</h1>
+    </div>
+    <div class="row">
+        <?php
     $sql="SELECT * FROM contrat WHERE id_user ='$id'";
     $req = $db->prepare($sql);
     $req->execute();
@@ -22,31 +22,31 @@ if($user == "1" ){ // Home client
       $id_car = $value['id_biens'];
       ?>
 
-      <div class="col-4 bien">
-          <div class="card">
-              <a href="accident.php?id=<?php echo $id_car; ?>">
-                  <div class="card-body text-center">
-                      <h6>Voiture :</h6>
-                      <img class="bien-icn" src="../img/car.svg" />
-                      <span> Déclarer un incident</span>
-                  </div>
-              </a>
-          </div>
-      </div>
-    <?php }
+        <div class="col-4 bien">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h6>Voiture :</h6>
+                    <img class="bien-icn" src="../img/car.svg" />
+                    <a href="accident.php?id=<?php echo $id_car; ?>">
+                        <span> Déclarer un incident</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php }
 
 }elseif($user == "2" ){ // Home assureur
 ?>
-<div class="container-fluid">
+        <div class="container-fluid">
 
-</div>
-<?php
+        </div>
+        <?php
 }elseif($user == "3"){// Home prestataire
 ?>
-<div class="container-fluid">
+        <div class="container-fluid">
 
-</div>
-<?php
+        </div>
+        <?php
   }else{
     header('Location: localhost:8888/Workshop/vues/index.php');
     exit();

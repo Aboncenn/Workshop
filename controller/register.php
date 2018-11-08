@@ -7,7 +7,6 @@ require('../db/header.php');
   $req = $db->prepare($sql);
   $req->execute();
   $donnees = $req->fetchAll();
-
   $res = $req->rowCount();
   if(($res) != 0){
     if(($mdp == $donnees[0]['mot_de_passe'])){

@@ -1,7 +1,7 @@
 <?php
 require '../db/session.php';
 require('../db/header.php');
-var_dump($_POST);
+
 if (!empty($_POST)){
   $user = $_POST['user'];
   $bien = $_POST['bien'];
@@ -9,14 +9,13 @@ if (!empty($_POST)){
   $description = $_POST['description'];
   $constat = $_POST['constat'];
   if(!empty($description)){
-    $req = $db->prepare("INSERT INTO incident(id_bien, id_user,)
-      VALUES (:id_risque_direction,:pilote)");
-         $req->execute(
-           array(
-               'id_risque_direction' => $id_risque_direction,
-               'pilote' => $pilote,
-           )
-         );
+    $req = $db->prepare("INSERT INTO incident(id_bien, id_user,id_prestataire ,description,acte_de_prestation ,id_status)
+      VALUES ('$bien','$user',Null,'$description',Null,1)");
+    $req->execute();
+
+    ?>
+      <p>Vous avez ajouté un accident <a href="../vues/home.php">go to home</a> </p>
+    <?php
   }
 
 if (!empty($constat)){

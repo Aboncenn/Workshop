@@ -123,7 +123,7 @@ $acte_prestation = $contrat[0]['acte_de_prestation'];
     </form>
 <?php } else{
 
-  header('Location: localhost:8888/Workshop/vues/index.php');
+  header('Location: ../vues/index.php');
   exit();
 }
 require('../db/footer.php');

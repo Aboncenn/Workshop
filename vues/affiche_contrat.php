@@ -1,6 +1,5 @@
 <?php
 require('../db/header.php');
-<<<<<<< HEAD
 require('../db/db.php')
 
 //Récupération dans la base
@@ -9,7 +8,7 @@ while($data = $recuperationContrat->fetch()){
   echo $data['name'].' : '.'<a href="'.$data['file_url'].'"> Télécharger'.$data['name'].'</a><br/>';
 }
 ?>
-=======
+
 /*
 Affiche la totalité de la blockchain
 */
@@ -51,9 +50,8 @@ if($user == "1" || $user == "2"){
 </div>
 <?php
 }else{
-  header('Location: localhost:8888/Workshop/vues/index.php');
+  header('Location: ../vues/index.php');
   exit();
 }
 require('../db/footer.php');
 ?>
->>>>>>> 021cdf966013b9cc68d10f0b10942cad99d9d053

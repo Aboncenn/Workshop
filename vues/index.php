@@ -15,12 +15,9 @@ require('../db/header.php');
                         <img src="https://image.flaticon.com/icons/svg/236/236831.svg" width="128vw" class="img-responsive" alt="" />
                         <input type="email" name="email" placeholder="Email" required class="form-control input-lg"/>
                         <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password"
-                            required="" />
+                            required />
                         <div class="pwstrength_viewport_progress"></div>
                         <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
-                        <div>
-                            <a href="#">Create account</a> or <a href="#">reset password</a>
-                        </div>
 
                     </form>
 

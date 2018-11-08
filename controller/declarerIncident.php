@@ -31,7 +31,7 @@ if (!empty($constat)){
       if(move_uploaded_file($file_tmp_name,$file_dest))
       {
 
-          $req = $db->prepare('INSERT INTO files(name,file_url,type) VALUES(?,?) ');
+          $req = $db->prepare('INSERT INTO files(name,file_url,type) VALUES(?,?,?) ');
           $req->execute(array($file_name,$file_dest,'ContratAmiable'));
 
         echo 'Le fichier a bien été envoyés';

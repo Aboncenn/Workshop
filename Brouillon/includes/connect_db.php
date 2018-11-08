@@ -1,6 +1,6 @@
 <?php
   try{
-    $db = new PDO('mysql:host=localhost;dbname=workshopi4','root','');
+    $db = new PDO('mysql:host=localhost;dbname=bdd_workshop','root','');
   } catch(PDOException $e){
     die('Erreur'.$e->getMessage());
   }

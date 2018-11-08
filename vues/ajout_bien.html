@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Ajouter un bien</title>
+    <meta charset="UTF-8"/>
+  </head>
+    <body>
+      <h1> Ajouter votre bien </h1>
+      <form method="POST" action="ajout_bien.php">
+        <fieldset>
+            <legend>Information relative au bien</legend>
+            <p>
+              Quels est le bien que vous voulez ajouter :<br />
+              <input type="radio" name="bien" value="voiture" id="voiture"/>
+              <label for="voiture"> Voiture </label><br/>
+              <input type="radio" name="bien" value="moto" id="moto"/>
+              <label for="moto"> moto </label><br/>
+              <input type="radio" name="bien" value="scooter" id="scooter"/>
+              <label for="scooter"> Scooter </label><br/>
+
+            </p>
+            <p>
+                <label for="description"> Plaque d'immatriculation: </label>
+                <input type="text" name="plaque_Immatriculation"/>
+            </p>
+            <p>
+                <label for="date_achat"> Date d'achat du véhicule:</label>
+                <input type="date" name="date_achat"/>
+            </p>
+          <input type="submit" value ="Envoyer"/>
+        </fieldset>
+      </form>
+    </body>
+</html>

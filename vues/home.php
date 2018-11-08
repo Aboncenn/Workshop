@@ -56,6 +56,7 @@ if($user == "1" ){ // Home client
       ?>
       <div class="col-4 bien">
           <div class="card">
+
                 <div class="row">
                     <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
                 </div>

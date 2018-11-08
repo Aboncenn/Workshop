@@ -18,14 +18,17 @@ if(!empty($nom) AND !empty($prenom) AND !empty($telephone) AND !empty($fonct) AN
     $insertmbr = $db->prepare("INSERT INTO user(nom, prenom, mail, mot_de_passe, telephone, id_fonction) VALUES(?, ?, ?, ?, ?, ?)");
     $insertmbr->execute(array($nom, $prenom, $email, $mdp, $telephone, $fonct));
     $erreur = "Votre compte a bien été créé !";
+    ?>
+    <p>Votre compte a bien été créé ! <a href="../vues/home.php">Retourner à l'accueil </a> </p>
+    <?php
   } else {
-    $erreur = "Adresse mail déjà utilisée !";
+    ?>
+    <p>Adresse mail déjà utilisée ! <a href="../vues/create_compte.php">Retourner à la page de création de compte</a> </p>
+    <?php
   }
 } else {
-  $erreur = "Tous les champs doivent être complétés !";
-}
-
-if(isset($erreur)) {
-  echo '<font color="red">'.$erreur."</font>";
+  ?>
+  <p>Tous les champs doivent être complétés ! <a href="../vues/create_compte.php">Retourner à la page de création de compte</a> </p>
+  <?php
 }
 ?>

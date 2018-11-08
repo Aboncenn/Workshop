@@ -15,10 +15,11 @@ IF ASSUREUR
 affiche la home des assureurs
 */
 $user = $_SESSION['user'];
-if($user == "client" ){
-}elseif($user == "assureur" ){
+if($user == "1" ){
+  var_dump($_SESSION);
+}elseif($user == "2" ){
 
-}elseif($user == "prestataire"){
+}elseif($user == "3"){
 
 ?>
 <div class="container-fluid">

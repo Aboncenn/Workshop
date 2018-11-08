@@ -40,10 +40,46 @@ if($user == "1" ){ // Home client
   $req->execute();
   $contrat = $req->fetchAll(PDO::FETCH_ASSOC);
 
-$id_user = $contrat['id_user'];
-$id_bien = ;
-$id_assureur=;
-var_dump($contrat);
+$status = $contrat[0]["id_status"];
+$id_user = $contrat[0]['id_user'];
+$id_bien = $contrat[0]['id_bien'];
+$id_assureur=$contrat[0]['id_bien'];
+$description = $contrat[0]['description'];
+if($status == 1){
+?>
+<div class="container-fluid">
+  <h3> Définir un prestataire pour un accident </h3>
+  <form method="post" action="../controller/declarerIncident.php">
+    <input name="user" type="hidden" value=<?php echo $id_user?>>
+    <input name="bien" type="hidden" value=<?php echo $id_bien?>>
+    <input name="assureur" type="hidden" value=<?php echo $id_assureur?>>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Description</label>
+      <textarea type="text" class="form-control" name="description" value=<?php echo $description?> placeholder="Description de l'incident" required><?php echo $description?> </textarea>
+    </div>
+    <div class="form-group">
+      <?php
+      $sql="SELECT * FROM status";
+      $req = $db->prepare($sql);
+      $req->execute();
+      $status = $req->fetchAll(PDO::FETCH_ASSOC);
+      ?>
+      <label>Statut :</label>
+             <select name="status" class="form-control" style="width: 100%;"required>
+               <option selected value=''>S&#233;l&#233;ctionnez</option>
+               <?php
+                 foreach($status as $key => $value){
+                   echo'<option value="'. $value['id'].'">'; echo $value['intitule_statut'];?></option>
+                  <?php } ?>
+             </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<?php
+}elseif($status == 2){
+
   ?>
   <div class="container-fluid">
     <h3> Définir un prestataire pour un accident </h3>
@@ -53,19 +89,22 @@ var_dump($contrat);
       <input name="assureur" type="hidden" value=<?php echo $id_assureur?>>
       <div class="form-group">
         <label for="exampleInputEmail1">Description</label>
-        <textarea type="text" class="form-control" name="description" value=<?php echo $id_user?> placeholder="Description de l'incident" required></textarea>
+        <textarea type="text" class="form-control" name="description" value=<?php echo $description?> placeholder="Description de l'incident" required><?php echo $description?> </textarea>
       </div>
-      <label for="constat"> Joindre Constat à l'amiable:</label>
-      <input type ="file" name="constat" id="constat"/>
-      <br/>
-      <a href ="constat-amiable-auto.pdf" target="_blank"> Télécharger le constat à l'amiable </a>
-      <br/>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Liste des prestations</label>
+        <textarea type="text" class="form-control" name="prestations" placeholder="Listes des actes faits par vous" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Liste des prestations</label>
+        <textarea type="text" class="form-control" name="prestations" placeholder="Listes des actes faits par vous" required></textarea>
+      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-    <h3> Définir un prestataire pour un accident </h3>
+  </div>
 
 <?php
+}
 }elseif($user == "3" ){ // prestataire
   ?>
   <div class="container-fluid">

@@ -1,14 +1,15 @@
 <?php
 require '../db/session.php';
 require('../db/header.php');
-
+var_dump($_POST);
 if (!empty($_POST)){
   $user = $_POST['user'];
   $bien = $_POST['bien'];
   $assureur = $_POST['assureur'];
   $description = $_POST['description'];
-  $constat = $_POST['constat'];
-  if(!empty($description)){
+  $status= $_POST['status'];
+
+  if($status == NULL){
     $req = $db->prepare("INSERT INTO incident(id_bien, id_user,id_prestataire ,description,acte_de_prestation ,id_status)
       VALUES ('$bien','$user',Null,'$description',Null,1)");
     $req->execute();

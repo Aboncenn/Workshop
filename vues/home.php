@@ -14,13 +14,14 @@ if($user == "1" ){ // Home client
     </div>
     <div class="row">
         <?php
-          $sql="SELECT * FROM contrat WHERE id_user ='$id'";
-          $req = $db->prepare($sql);
-          $req->execute();
-          $car = $req->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($car as $key => $value) {
-            $id_car = $value['id_biens'];
-        ?>
+    $sql="SELECT * FROM contrat WHERE id_user ='$id'";
+    $req = $db->prepare($sql);
+    $req->execute();
+    $car = $req->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($car as $key => $value) {
+      $id_car = $value['id_biens'];
+      ?>
+
         <div class="col-4 bien">
             <div class="card">
                 <div class="card-body text-center">
@@ -33,6 +34,7 @@ if($user == "1" ){ // Home client
             </div>
         </div>
         <?php }
+
 }else if($user == "2" ){ // Home assureur
 ?>
 <div class="container-fluid">
@@ -43,9 +45,9 @@ if($user == "1" ){ // Home client
     <?php
 
     $sql="SELECT * FROM user,incident, bien,contrat WHERE user.id = incident.id_user AND contrat.id_assureur =2 AND bien.id = contrat.id_biens AND incident.id_user = contrat.id_user GROUP BY contrat.id_biens ";
-        $req = $db->prepare($sql);
-        $req->execute();
-        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+    $req = $db->prepare($sql);
+    $req->execute();
+    $res = $req->fetchAll(PDO::FETCH_ASSOC);
     foreach ($res as $key => $value) {
       $id = $value['id'];
       $nom = $value['nom'];
@@ -57,6 +59,7 @@ if($user == "1" ){ // Home client
                 <div class="row">
                     <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
                 </div>
+
           </div>
       </div>
       <?php

@@ -2,8 +2,8 @@
 require('../db/header.php');
 /*
 Ajout de nouveaux bien
-
 */
+
 $user = $_SESSION['user'];
 if($user == "3" ){
 ?>
@@ -36,9 +36,7 @@ if($user == "3" ){
       </div>
     </div>
     <div class="col-md-4"></div>
-
   </div>
-
 </div>
 
 <?php
@@ -48,3 +46,8 @@ if($user == "3" ){
   exit();
 }
 require('../db/footer.php');
+<<<<<<< HEAD
+
+?>
+=======
+>>>>>>> 1859a09d277ee9755e5f8bd042cd40d1c17947f5

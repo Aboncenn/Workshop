@@ -5,7 +5,7 @@ TODO
 Fonctionnalités
 
 Loggin (ludo fait)
-UPDATE Données clients (livio)
+UPDATE Données clients
 Remplir un formulaire d'expertise (livio fait )
 Envoyer l'expertise à l'assureur(livio fait )
 Proposer un devis au client

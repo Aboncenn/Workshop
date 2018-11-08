@@ -6,7 +6,7 @@ IF PRESTATAIRES
 Proposer rdv
 */
 $user = $_SESSION['user'];
-if($user == "prestataire" ){
+if($user == "3" ){
 
 ?>
 <div class="container-fluid">
@@ -29,7 +29,7 @@ if($user == "prestataire" ){
 </div>
 <?php
 
-}elseif($user == "client" ){
+}elseif($user == "1" ){
 
 ?>
 <div class="container-fluid">

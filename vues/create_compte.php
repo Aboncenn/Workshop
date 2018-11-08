@@ -4,6 +4,7 @@ require('../db/header.php');
 FORM DE CREATION COMPTE CLIENTS ET PRESTATAIRES
 */
 $user = $_SESSION['user'];
+
 if($user == "2" ){
 
   ?>

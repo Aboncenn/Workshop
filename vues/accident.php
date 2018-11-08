@@ -111,7 +111,6 @@ if($user == "1" ){ // Home client
   $id_assureur=$contrat[0]['id_bien'];
   $description = $contrat[0]['description'];
   $acte_prestation = $contrat[0]['acte_de_prestation'];
->>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
   ?>
   <div class="container-fluid">
     <h3> Réponse à l'accident </h3>

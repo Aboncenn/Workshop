@@ -17,7 +17,7 @@ if(!empty($nom) AND !empty($prenom) AND !empty($telephone) AND !empty($fonct) AN
   if($mailexist == 0) {
     $insertmbr = $db->prepare("INSERT INTO user(nom, prenom, mail, mot_de_passe, telephone, id_fonction) VALUES(?, ?, ?, ?, ?, ?)");
     $insertmbr->execute(array($nom, $prenom, $email, $mdp, $telephone, $fonct));
-    $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+    $erreur = "Votre compte a bien été créé !";
   } else {
     $erreur = "Adresse mail déjà utilisée !";
   }

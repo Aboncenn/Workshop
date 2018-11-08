@@ -43,9 +43,12 @@ if($user == "1" ){ // Home client
         <a class="nav-link active" href="../vues/home.php">Liste des accidents</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link " href="../vues/createIncident.php">Déclarer un incident</a>
       </li>
       <li class="nav-item">
+=======
+>>>>>>> 38dec8276b41f5a2d4ab897ec4426f936d81dace
           <a class="nav-link" href="../vues/create_compte.php">Création de compte</a>
         </li>
         <li class="nav-item">

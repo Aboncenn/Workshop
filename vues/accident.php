@@ -41,8 +41,8 @@ if($user == "1" ){ // Home client
   $contrat = $req->fetchAll(PDO::FETCH_ASSOC);
 
 $id_user = $contrat['id_user'];
-$id_bien = ;
-$id_assureur=;
+$id_bien = "";
+$id_assureur= "";
 var_dump($contrat);
   ?>
   <div class="container-fluid">

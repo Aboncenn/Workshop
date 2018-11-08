@@ -1,14 +1,17 @@
 <?php
 require('../db/header.php');
+require('../db/nav.php');
 /*
 Affiche la totalité de la blockchain
 */
 
+
 $user = $_SESSION['user'];
 if($user == "1" || $user == "2" ){
-?>
-<div class="container-fluid">
-  <table class="table table-dark">
+  ?>
+  <div class="container-fluid">
+      <h1 class="text-center">Création de compte</h1>
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -42,7 +45,7 @@ if($user == "1" || $user == "2" ){
 </div>
 <?php
 }else{
-  header('Location: localhost:8888/Workshop/vues/index.php');
+  header('Location: localhost:8888/Workshop/vues/');
   exit();
 }
   require('../db/footer.php');

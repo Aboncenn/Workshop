@@ -8,8 +8,7 @@ $user = $_SESSION['user'];
 if($user == "1" ){ // Home client
 ?>
 
-  <!-- <div class="container-fluid"> -->
-    <div class="">
+   <div class="container-fluid">
 
       <ul class="nav nav-tabs card-header-tabs">
         <li>
@@ -37,8 +36,7 @@ if($user == "1" ){ // Home client
 
 }elseif($user == "2" ){// Home assureur
   ?>
-  <!-- <div class="container-fluid"> -->
-    <div class="">
+  <div class="container-fluid">
 
       <ul class="nav nav-tabs">
         <li>
@@ -51,7 +49,7 @@ if($user == "1" ){ // Home client
         <li class="nav-item">
           <a class="nav-link" href="#">Contrats</a>
         </li>
-        
+
         <li class="nav-item">
             <a class="nav-link" href="#">Se déconnecter</a>
           </li>
@@ -85,6 +83,5 @@ if($user == "1" ){ // Home client
         </li>
       </ul>
     </div>
-  <!-- </div> -->
   <?php
 }

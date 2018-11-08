@@ -16,7 +16,8 @@ if($user == "1" ){ // Home client
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="#">Mes biens</a>
+
+          <a class="nav-link active" href="accident.php">Déclarer un accident</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contrats</a>
@@ -42,7 +43,7 @@ if($user == "1" ){ // Home client
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link active" href="accident.php">Déclarer un accident</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -66,7 +67,7 @@ if($user == "1" ){ // Home client
           <img class="navbar-brand" src="../img/axa.png" width=32vw href="#" />
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="accident.php">Déclarer un accident</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>

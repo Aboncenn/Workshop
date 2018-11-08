@@ -59,6 +59,12 @@ if($user == "1" ){ // Home client
                 <div class="row">
                     <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
                 </div>
+                <div class="row">
+                  <a href="../controller/validation_blockchain.php?id=<?php echo $id; ?>">
+                      <span> Clore l'accident</span>
+                  </a>
+                </div>
+
 
           </div>
       </div>

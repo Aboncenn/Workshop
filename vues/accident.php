@@ -105,7 +105,6 @@ if($user == "1" ){ // Home client
     $req = $db->prepare($sql);
     $req->execute();
     $contrat = $req->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($contrat);
   $id = $contrat[0]["id"];
   $status = $contrat[0]["id_status"];
   $id_user = $contrat[0]['id_user'];

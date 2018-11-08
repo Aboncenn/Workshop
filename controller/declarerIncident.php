@@ -1,7 +1,7 @@
 <?php
 require '../db/session.php';
 require('../db/header.php');
-var_dump($_POST);
+
 if (!empty($_POST)){
   if(isset($_POST['id'])){
     $id= $_POST['id'];
@@ -24,7 +24,7 @@ if (!empty($_POST)){
     $prestations = NULL;
   }
   if(isset($_POST['prestations_faites'])){
-    $prestations_faites= $_POST['$prestations_faites'];
+    $prestations_faites= $_POST['prestations_faites'];
   }else{
     $prestations_faites = NULL;
   }
@@ -44,7 +44,13 @@ if (!empty($_POST)){
     <p>Vous avez indiqué un prestaire <a href="../vues/home.php">go to home</a> </p>
 <?php
   }
-
+  if($id <> 0 && $prestations_faites <> NULL){
+    $req = $db->prepare("UPDATE incident SET `acte_de_prestation`='$prestations_faites'  WHERE id = $id");
+    $req->execute();
+?>
+    <p>Vous avez rempli votre travail <a href="../vues/home.php">go to home</a> </p>
+<?php
+  }
 
 if (!empty($constat)){
     $file_name = $_FILES['constat']['name'];

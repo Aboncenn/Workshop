@@ -45,11 +45,7 @@ if($user == "1" || $user == "2" ){
 </div>
 <?php
 }else{
-<<<<<<< HEAD
-  header('Location: localhost:8888/Workshop/vues/');
-=======
   header('Location: ../vues/index.php');
->>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
   exit();
 }
   require('../db/footer.php');

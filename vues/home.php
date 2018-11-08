@@ -36,7 +36,6 @@ if($user == "1" ){ // Home client
         <?php }
 
 }else if($user == "2" ){ // Home assureur
-    var_dump($_SESSION);
 ?>
 <div class="container-fluid">
   <div class="card-body">

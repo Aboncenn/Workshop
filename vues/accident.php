@@ -101,12 +101,6 @@ if($user == "1" ){ // Home client
 <?php
 }elseif($user == "3" ){ // prestataire
 
-<<<<<<< HEAD
-$id_user = $contrat['id_user'];
-$id_bien = "";
-$id_assureur= "";
-var_dump($contrat);
-=======
     $sql="SELECT * FROM bien,incident WHERE incident.id ='$id' and incident.id = bien.id";
     $req = $db->prepare($sql);
     $req->execute();
@@ -118,7 +112,6 @@ var_dump($contrat);
   $id_assureur=$contrat[0]['id_bien'];
   $description = $contrat[0]['description'];
   $acte_prestation = $contrat[0]['acte_de_prestation'];
->>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
   ?>
   <div class="container-fluid">
     <h3> Réponse à l'accident </h3>

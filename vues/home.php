@@ -8,7 +8,7 @@ $user = $_SESSION['user'];
 $id = $_SESSION['id'];
 if($user == "1" ){ // Home client
 ?>
-<div class="container-fluid">
+<div class="container">
   <div class="card-body">
       <h1 class="card-title text-center">Mes Biens</h1>
   </div>

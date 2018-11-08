@@ -16,7 +16,7 @@ if($user == "1" ){ // Home client
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="accident.php">Mes biens</a>
+          <a class="nav-link active" href="home.php">Mes biens</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="accident.php">Déclarer un accident</a>
@@ -44,12 +44,10 @@ if($user == "1" ){ // Home client
         <li class="nav-item">
         <a class="nav-link active" href="accident.php">Déclarer un accident</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link 2</a>
-        </li>
+        </li> -->
+        
         <li class="nav-item">
           <a class="nav-link" href="#">se déconnecter</a>
         </li>

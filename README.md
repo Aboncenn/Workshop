@@ -4,7 +4,7 @@ TODO
 
 Fonctionnalités
 
-Loggin (ludo )
+Loggin (ludo fait)
 UPDATE Données clients (livio)
 Remplir un formulaire d'expertise (livio fait )
 Envoyer l'expertise à l'assureur(livio fait )

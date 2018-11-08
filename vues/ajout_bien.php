@@ -46,8 +46,3 @@ if($user == "3" ){
   exit();
 }
 require('../db/footer.php');
-<<<<<<< HEAD
-
-?>
-=======
->>>>>>> 1859a09d277ee9755e5f8bd042cd40d1c17947f5

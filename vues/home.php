@@ -34,6 +34,7 @@ if($user == "1" ){ // Home client
         </div>
         <?php }
 }else if($user == "2" ){ // Home assureur
+    var_dump($_SESSION);
 ?>
 <div class="container-fluid">
   <div class="card-body">
@@ -47,6 +48,8 @@ if($user == "1" ){ // Home client
         $req->execute();
         $res = $req->fetchAll(PDO::FETCH_ASSOC);
     foreach ($res as $key => $value) {
+        var_dump($value);
+
       $id = $value['id'];
       $nom = $value['nom'];
       $data = $value['date'];
@@ -54,9 +57,10 @@ if($user == "1" ){ // Home client
       ?>
       <div class="col-4 bien">
           <div class="card">
-                <div class="row">
+
+                <!-- <div class="row"> -->
                     <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
-                </div>
+                <!-- </div> -->
           </div>
       </div>
       <?php

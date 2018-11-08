@@ -2,13 +2,24 @@
 require '../db/session.php';
 require('../db/header.php');
 var_dump($_POST);
-
 if (!empty($_POST)){
-$
+  $user = $_POST['user'];
+  $bien = $_POST['bien'];
+  $assureur = $_POST['assureur'];
+  $description = $_POST['description'];
+  $constat = $_POST['constat'];
+  if(!empty($description)){
+    $req = $db->prepare("INSERT INTO incident(id_bien, id_user,)
+      VALUES (:id_risque_direction,:pilote)");
+         $req->execute(
+           array(
+               'id_risque_direction' => $id_risque_direction,
+               'pilote' => $pilote,
+           )
+         );
+  }
 
-
-
-if (!empty($_FILES)){
+if (!empty($constat)){
     $file_name = $_FILES['constat']['name'];
     $file_extension = strtolower(strrchr($file_name,"."));
     $file_tmp_name= $_FILES['constat']['tmp_name'];

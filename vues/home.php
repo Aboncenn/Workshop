@@ -23,10 +23,11 @@ if($user == "1" ){ // Home client
 
       <div class="col-4 bien">
           <div class="card">
-              <a href="">
+              <a href="accident.php?<?php id ?>">
                   <div class="card-body text-center">
                       <h6>Voiture :</h6>
                       <img class="bien-icn" src="../img/car.svg" />
+                      <span> Déclarer un incident</span>
                   </div>
               </a>
           </div>

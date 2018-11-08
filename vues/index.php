@@ -6,7 +6,6 @@ require('../db/header.php');
 
         <div class="row" id="pwd-container">
             <div class="col-md-4"></div>
-
             <div class="col-md-4">
                 <section class="login-form">
                     <form method="post" action="../controller/register.php" role="login">

@@ -16,10 +16,11 @@ if($user == "1" ){ // Home client
         </li>
 
         <li class="nav-item">
+
           <a class="nav-link active" href="accident.php">Déclarer un accident</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Contrats</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link 2</a>

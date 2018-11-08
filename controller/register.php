@@ -12,10 +12,12 @@ require('../db/header.php');
     if(($mdp == $donnees[0]['mot_de_passe'])){
     $_SESSION["user"] = $donnees[0]['id_fonction'];
     $_SESSION["id"] = $donnees[0]['id'];
+    header('Location: ../vues/home.php'); 
       ?>
       <p>Vous êtes connecté ! <a href="../vues/home.php">go to home</a> </p>
       <?php
     }else{
+      header('Location: ../vues/index.php'); 
       ?>
       <p>Mauvais mot de passe, recommencez <a href="../vues/index.php">Rentourner à la connexion </a> </p>
       <?php

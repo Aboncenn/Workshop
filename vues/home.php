@@ -94,8 +94,9 @@ if($user == "1" ){ // Home client
             <div class="card">
                 <a href="accident.php?id=<?php echo $id; ?>">
                     <div class="card-body text-center">
-                        <h6>Voiture :</h6>
-                        <img class="bien-icn" src="../img/car.svg" />
+                        <b>date :</b><?php echo Date('d-m-y');?>
+                        <!-- <h6>Voiture :</h6> -->
+                        <!-- <img class="bien-icn" src="../img/car.svg" /> -->
                         <span> Selectionnez un contrat</span>
                     </div>
                 </a>

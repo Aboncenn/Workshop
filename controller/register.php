@@ -15,6 +15,7 @@ require('../db/header.php');
   if(($res) != 0){
     if(($mdp == $donnees->mot_de_passe)){
     $_SESSION["user"] = $donnees->id_fonction;
+    $_SESSION["id"] = $donnees->id;
       ?>
       <p>Vous êtes connecté ! <a href="../vues/home.php">go to home</a> </p>
       <?php

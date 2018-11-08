@@ -1,7 +1,24 @@
 <?php
-  require'includes/connect_db.php';
-  //var_dump($_FILES);
-if (!empty($_FILES)){
+require '../db/session.php';
+require('../db/header.php');
+
+if (!empty($_POST)){
+  $user = $_POST['user'];
+  $bien = $_POST['bien'];
+  $assureur = $_POST['assureur'];
+  $description = $_POST['description'];
+  $constat = $_POST['constat'];
+  if(!empty($description)){
+    $req = $db->prepare("INSERT INTO incident(id_bien, id_user,id_prestataire ,description,acte_de_prestation ,id_status)
+      VALUES ('$bien','$user',Null,'$description',Null,1)");
+    $req->execute();
+
+    ?>
+      <p>Vous avez ajouté un accident <a href="../vues/home.php">go to home</a> </p>
+    <?php
+  }
+
+if (!empty($constat)){
     $file_name = $_FILES['constat']['name'];
     $file_extension = strtolower(strrchr($file_name,"."));
     $file_tmp_name= $_FILES['constat']['tmp_name'];
@@ -26,5 +43,13 @@ if (!empty($_FILES)){
       echo 'Seuls les fichiers PDF et JPEG sont autorisées';
     }
 
+  }
 }
+
+
+
+
+
+
+
  ?>

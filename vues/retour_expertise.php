@@ -5,6 +5,9 @@ Retour du form expertise
 
 ONLY ASSUREUR
 */
+$user = $_SESSION['user'];
+if($user == "assureur" ){
+
 ?>
 <div class="container-fluid">
   <form>
@@ -25,3 +28,10 @@ ONLY ASSUREUR
   </form>
 
 </div>
+<?php
+else{
+  header('Location: localhost:8888/Workshop/vues/index.php');
+  exit();
+}
+require('../db/footer.php');
+?>

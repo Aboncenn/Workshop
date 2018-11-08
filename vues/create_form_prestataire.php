@@ -11,9 +11,10 @@ If button devis cliqué
 
 FORM CREATION DU DEVIS
 */
+$user = $_SESSION['user'];
+if($user == "prestataire" ){
 
-
- ?>
+?>
  <div class="container-fluid">
    <form>
      <div class="form-group">
@@ -33,3 +34,10 @@ FORM CREATION DU DEVIS
    </form>
 
  </div>
+ <?php
+   }else{
+     header('Location: localhost:8888/Workshop/vues/index.php');
+     exit();
+   }
+   require('../db/footer.php');
+ ?>

@@ -11,24 +11,9 @@ $mdp = $_POST['password'];
 $id = $_SESSION['id'];
 
 if(!empty($nom) AND !empty($prenom) AND !empty($telephone) AND !empty($email) AND !empty($mdp)) {
-
-  $reqmail = $db->prepare("SELECT * FROM user WHERE mail = ?");
-  $reqmail->execute(array($email));
-  $mailexist = $reqmail->rowCount();
-  if($mailexist == 0) {
-    $insertmbr = $db->prepare("UPDATE user SET nom = $nom WHERE id = $id");
-    $insertmbr->execute( );
-    $insertmbr = $db->prepare("UPDATE user SET prenom = $prenom WHERE id = $id");
-    $insertmbr->execute( );
-    $insertmbr = $db->prepare("UPDATE user SET telephone = $telephone WHERE id = $id");
-    $insertmbr->execute( );
-    $insertmbr = $db->prepare("UPDATE user SET email = $email WHERE id = $id");
-    $insertmbr->execute( );
-    $insertmbr = $db->prepare("UPDATE user SET mdp = $mdp WHERE id = $id");
-    $insertmbr->execute( );
-  } else {
-    $erreur = "Adresse mail déjà utilisée !";
-  }
+  $insertmbr = $db->prepare("UPDATE user SET nom = '$nom', prenom = '$prenom',telephone = '$telephone',mail = '$email',mot_de_passe = '$mdp'  WHERE id = '$id'");
+  $insertmbr->execute();
+  $erreur = "Votre compte a été mis à jour !";
 } else {
   $erreur = "Tous les champs doivent être complétés !";
 }

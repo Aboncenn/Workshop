@@ -21,13 +21,10 @@ if($user == "1" ){ // Home client
           <a class="nav-link active" href="../vues/home.php">Mes biens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../vues/createIncident.php">Déclarer un incident</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Contrats</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">se déconnecter</a>
+          <a class="nav-link" href="#">Se déconnecter</a>
         </li>
       </ul>
     </nav>
@@ -42,10 +39,6 @@ if($user == "1" ){ // Home client
         <li>
           <img class="navbar-brand" src="../img/axa.png" width=32vw href="#" />
         </li>
-
-        <li class="nav-item">
-        <a class="nav-link active" href="../vues/createIncident.php">Déclarer un incident</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="../vues/create_compte.php">Création de compte</a>
         </li>
@@ -54,7 +47,7 @@ if($user == "1" ){ // Home client
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">se déconnecter</a>
+          <a class="nav-link" href="#">Se déconnecter</a>
         </li>
       </ul>
     </nav>
@@ -69,16 +62,13 @@ if($user == "1" ){ // Home client
           <img class="navbar-brand" src="../img/axa.png" width=32vw href="#" />
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../vues/createIncident.php">Déclarer un incident</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="../vues/update_compte_user.php">Modification de compte</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link 2</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">se déconnecter</a>
+          <a class="nav-link" href="#">Se déconnecter</a>
         </li>
       </ul>
     </nav>

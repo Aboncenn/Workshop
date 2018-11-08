@@ -165,7 +165,7 @@ if($user == "1" ){ // Home client
     </form>
 <?php } else{
 
-  header('Location: localhost:8888/Workshop/vues/index.php');
+  header('Location: ../vues/index.php');
   exit();
 }
 require('../db/footer.php');

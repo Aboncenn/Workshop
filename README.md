@@ -24,3 +24,4 @@ Voir information contrats (livio)
 Demande de contrat à l’amiable (livio fait )
 Mandater un prestataire( livio fait)
 Envoyer le contrat rempli avec les documents (livio fait )
+Gérer la déconnection

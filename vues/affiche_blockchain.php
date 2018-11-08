@@ -5,7 +5,7 @@ Affiche la totalité de la blockchain
 */
 
 $user = $_SESSION['user'];
-if($user == "client" || $user == "assureur" ){
+if($user == "1" || $user == "2" ){
 ?>
 <div class="container-fluid">
   <table class="table table-dark">

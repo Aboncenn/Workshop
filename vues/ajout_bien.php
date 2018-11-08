@@ -5,7 +5,7 @@ Ajout de nouveaux bien
 */
 
 $user = $_SESSION['user'];
-if($user == "assureur" ){
+if($user == "3" ){
 ?>
 <div class="container">
   <div class="card-body">
@@ -38,7 +38,7 @@ if($user == "assureur" ){
     <div class="col-md-4"></div>
   </div>
 </div>
- 
+
 <?php
 
 }else{
@@ -46,5 +46,8 @@ if($user == "assureur" ){
   exit();
 }
 require('../db/footer.php');
+<<<<<<< HEAD
 
 ?>
+=======
+>>>>>>> 1859a09d277ee9755e5f8bd042cd40d1c17947f5

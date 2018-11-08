@@ -3,7 +3,7 @@
 $host ='localhost';
 $db_name ='workshop';
 $user ='root';
-$password ='root';
+$password ='';
 
 try {
 $db = new PDO("mysql:dbname=" .$db_name.";host=" .$host, $user, $password, array(PDO::MYSQL_ATTR_LOCAL_INFILE=>1));

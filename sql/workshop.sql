@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 08, 2018 at 08:17 AM
+-- Generation Time: Nov 08, 2018 at 09:03 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -23,24 +23,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `bien` (
   `id` int(11) NOT NULL,
   `intitule` text NOT NULL,
-  `date_achat` date NOT NULL
+  `date_achat` date NOT NULL,
+  `id_type_bien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bien`
 --
 
-INSERT INTO `bien` (`id`, `intitule`, `date_achat`) VALUES
-(15793, 'Skoda octavia', '2017-03-13'),
-(15794, 'Skoda Fabia', '2016-05-10'),
-(15796, 'Skoda superb', '2018-11-09'),
-(15797, 'DACIA Duster', '2017-06-13'),
-(15798, 'DACIA Sandero', '2017-07-19'),
-(15799, 'DACIA Dokker', '2016-09-12'),
-(15800, 'DACIA logan', '2017-02-28'),
-(15801, 'Fiat Punto', '2017-02-15'),
-(15802, 'Fiat 500', '2015-04-07'),
-(15803, 'Fiat Qubo', '2011-05-10');
+INSERT INTO `bien` (`id`, `intitule`, `date_achat`, `id_type_bien`) VALUES
+(15793, 'Skoda octavia', '2017-03-13', 0),
+(15794, 'Skoda Fabia', '2016-05-10', 0),
+(15796, 'Skoda superb', '2018-11-09', 0),
+(15797, 'DACIA Duster', '2017-06-13', 0),
+(15798, 'DACIA Sandero', '2017-07-19', 0),
+(15799, 'DACIA Dokker', '2016-09-12', 0),
+(15800, 'DACIA logan', '2017-02-28', 0),
+(15801, 'Fiat Punto', '2017-02-15', 0),
+(15802, 'Fiat 500', '2015-04-07', 0),
+(15803, 'Fiat Qubo', '2011-05-10', 0);
 
 -- --------------------------------------------------------
 
@@ -66,8 +67,17 @@ CREATE TABLE `contrat` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_biens` int(11) NOT NULL
+  `id_biens` int(11) NOT NULL,
+  `id_assureur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contrat`
+--
+
+INSERT INTO `contrat` (`id`, `date`, `id_user`, `id_biens`, `id_assureur`) VALUES
+(1, '2017-11-07', 1, 1, 2),
+(2, '2018-11-12', 1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -283,7 +293,7 @@ ALTER TABLE `blockchain`
 -- AUTO_INCREMENT for table `contrat`
 --
 ALTER TABLE `contrat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fonction`

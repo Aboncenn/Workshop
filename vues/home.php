@@ -44,7 +44,7 @@ if($user == "1" ){ // Home client
   <div class="row">
     <?php
 
-    $sql="SELECT * FROM user,incident, bien,contrat WHERE user.id = incident.id_user AND contrat.id_assureur =2 AND bien.id = contrat.id_biens AND incident.id_user = contrat.id_user GROUP BY contrat.id_biens ";
+    $sql="SELECT * FROM user,incident, bien,contrat WHERE user.id = incident.id_user AND contrat.id_assureur ='$id' AND bien.id = contrat.id_biens AND incident.id_user = contrat.id_user GROUP BY contrat.id_biens ";
     $req = $db->prepare($sql);
     $req->execute();
     $res = $req->fetchAll(PDO::FETCH_ASSOC);

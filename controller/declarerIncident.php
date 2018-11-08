@@ -1,6 +1,13 @@
 <?php
-  require'includes/connect_db.php';
-  //var_dump($_FILES);
+require '../db/session.php';
+require('../db/header.php');
+var_dump($_POST);
+
+if (!empty($_POST)){
+$
+
+
+
 if (!empty($_FILES)){
     $file_name = $_FILES['constat']['name'];
     $file_extension = strtolower(strrchr($file_name,"."));
@@ -26,5 +33,13 @@ if (!empty($_FILES)){
       echo 'Seuls les fichiers PDF et JPEG sont autorisées';
     }
 
+  }
 }
+
+
+
+
+
+
+
  ?>

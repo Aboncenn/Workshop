@@ -18,12 +18,13 @@ if($user == "1" ){ // Home client
     $req = $db->prepare($sql);
     $req->execute();
     $car = $req->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($car);
-    foreach ($car as $key => $value) {?>
+    foreach ($car as $key => $value) {
+      $id_car = $value['id_biens'];
+      ?>
 
       <div class="col-4 bien">
           <div class="card">
-              <a href="accident.php?<?php id ?>">
+              <a href="accident.php?id=<?php echo $id_car; ?>">
                   <div class="card-body text-center">
                       <h6>Voiture :</h6>
                       <img class="bien-icn" src="../img/car.svg" />

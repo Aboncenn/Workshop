@@ -71,9 +71,6 @@ if($user == "1" ){ // Home client
           <a class="nav-link" href="../vues/update_compte_user.php">Modification de compte</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link 2</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Se déconnecter</a>
         </li>
       </ul>

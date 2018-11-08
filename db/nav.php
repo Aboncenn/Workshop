@@ -21,9 +21,6 @@ if($user == "1" ){ // Home client
           <a class="nav-link active" href="../vues/home.php">Mes biens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../vues/accident.php">Déclarer un incident</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Contrats</a>
         </li>
         <li class="nav-item">

@@ -42,12 +42,7 @@ if($user == "3" ){
 <?php
 
 }else{
-  header('Location: localhost:8888/Workshop/vues/index.php');
+  header('Location: ../vues/index.php');
   exit();
 }
 require('../db/footer.php');
-<<<<<<< HEAD
-
-?>
-=======
->>>>>>> 1859a09d277ee9755e5f8bd042cd40d1c17947f5

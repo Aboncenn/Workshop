@@ -3,12 +3,32 @@ require '../db/session.php';
 require('../db/header.php');
 
 if (!empty($_POST)){
+  if(isset($_POST['id'])){
+    $id= $_POST['id'];
+  }else{
+  $id= 0;
+  }
   $user = $_POST['user'];
   $bien = $_POST['bien'];
   $assureur = $_POST['assureur'];
   $description = $_POST['description'];
-  $constat = $_POST['constat'];
-  if(!empty($description)){
+  if(isset($_POST['status'])){
+    $status= $_POST['status'];
+  }else{
+  $status= 0;
+  }
+
+  if(isset($_POST['prestataire'])){
+    $prestations= $_POST['prestataire'];
+  }else{
+    $prestations = NULL;
+  }
+  if(isset($_POST['prestations_faites'])){
+    $prestations_faites= $_POST['prestations_faites'];
+  }else{
+    $prestations_faites = NULL;
+  }
+  if($status == 0 && $id == 0){
     $req = $db->prepare("INSERT INTO incident(id_bien, id_user,id_prestataire ,description,acte_de_prestation ,id_status)
       VALUES ('$bien','$user',Null,'$description',Null,1)");
     $req->execute();
@@ -16,6 +36,20 @@ if (!empty($_POST)){
     ?>
       <p>Vous avez ajouté un accident <a href="../vues/home.php">go to home</a> </p>
     <?php
+  }
+  if($id <> 0 && $prestations_faites == NULL){
+    $req = $db->prepare("UPDATE incident SET `id_prestataire`='$prestations' ,`id_status`='$status'  WHERE id = $id");
+    $req->execute();
+?>
+    <p>Vous avez indiqué un prestaire <a href="../vues/home.php">go to home</a> </p>
+<?php
+  }
+  if($id <> 0 && $prestations_faites <> NULL){
+    $req = $db->prepare("UPDATE incident SET `acte_de_prestation`='$prestations_faites'  WHERE id = $id");
+    $req->execute();
+?>
+    <p>Vous avez rempli votre travail <a href="../vues/home.php">go to home</a> </p>
+<?php
   }
 
 if (!empty($constat)){

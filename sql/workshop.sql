@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 08, 2018 at 09:03 AM
+-- Generation Time: Nov 08, 2018 at 03:10 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -32,9 +32,9 @@ CREATE TABLE `bien` (
 --
 
 INSERT INTO `bien` (`id`, `intitule`, `date_achat`, `id_type_bien`) VALUES
-(15793, 'Skoda octavia', '2017-03-13', 0),
-(15794, 'Skoda Fabia', '2016-05-10', 0),
-(15796, 'Skoda superb', '2018-11-09', 0),
+(1, 'Skoda octavia', '2017-03-13', 0),
+(2, 'Skoda Fabia', '2016-05-10', 0),
+(3, 'Skoda superb', '2018-11-09', 0),
 (15797, 'DACIA Duster', '2017-06-13', 0),
 (15798, 'DACIA Sandero', '2017-07-19', 0),
 (15799, 'DACIA Dokker', '2016-09-12', 0),
@@ -51,10 +51,8 @@ INSERT INTO `bien` (`id`, `intitule`, `date_achat`, `id_type_bien`) VALUES
 
 CREATE TABLE `blockchain` (
   `id` int(11) NOT NULL,
-  `id_bien` int(11) NOT NULL,
-  `id_incident` int(11) NOT NULL,
-  `id_prestataire` int(11) NOT NULL,
-  `date` date NOT NULL
+  `Intitule_bien` varchar(30) NOT NULL,
+  `Date_achat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,6 +76,19 @@ CREATE TABLE `contrat` (
 INSERT INTO `contrat` (`id`, `date`, `id_user`, `id_biens`, `id_assureur`) VALUES
 (1, '2017-11-07', 1, 1, 2),
 (2, '2018-11-12', 1, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL,
+  `files_url` varchar(30) NOT NULL,
+  `name` varchar(16) NOT NULL,
+  `intitule` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -109,9 +120,9 @@ CREATE TABLE `incident` (
   `id` int(11) NOT NULL,
   `id_bien` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_prestataire` int(11) NOT NULL,
+  `id_prestataire` int(11) DEFAULT NULL,
   `description` text NOT NULL,
-  `acte_de_prestation` text NOT NULL,
+  `acte_de_prestation` text,
   `id_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -120,7 +131,13 @@ CREATE TABLE `incident` (
 --
 
 INSERT INTO `incident` (`id`, `id_bien`, `id_user`, `id_prestataire`, `description`, `acte_de_prestation`, `id_status`) VALUES
-(1, 3, 1, 5, 'MA voiture a été erafflé', 'Voiture repeint', 4);
+(1, 3, 1, 3, 'MA voiture a été erafflé', 'Voiture repeint', 4),
+(2, 1, 1, 3, 'bug', 'dfss', 4),
+(4, 1, 1, NULL, 'lol', NULL, 1),
+(5, 1, 1, NULL, 'test', NULL, 1),
+(6, 1, 1, NULL, 'test', NULL, 1),
+(7, 1, 1, NULL, 'La chèvre des rocheuses', NULL, 1),
+(8, 1, 1, NULL, 'fzez', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -157,16 +174,16 @@ CREATE TABLE `rendez_vous` (
   `id_user` int(11) NOT NULL,
   `id_prestataire` int(11) NOT NULL,
   `date` date NOT NULL,
-  `id_status` int(11) NOT NULL
+  `Status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rendez_vous`
 --
 
-INSERT INTO `rendez_vous` (`id`, `id_user`, `id_prestataire`, `date`, `id_status`) VALUES
-(1, 1, 1, '2018-11-05', 2),
-(2, 1, 2, '2018-11-04', 1);
+INSERT INTO `rendez_vous` (`id`, `id_user`, `id_prestataire`, `date`, `Status`) VALUES
+(1, 1, 1, '2018-11-05', '2'),
+(2, 1, 2, '2018-11-04', '1');
 
 -- --------------------------------------------------------
 
@@ -185,8 +202,6 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`id`, `intitule_statut`) VALUES
 (1, 'En cours'),
-(2, 'Refusé'),
-(3, 'En attente validation'),
 (4, 'Accepté'),
 (5, 'Cloturé');
 
@@ -235,6 +250,12 @@ ALTER TABLE `blockchain`
 -- Indexes for table `contrat`
 --
 ALTER TABLE `contrat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -296,6 +317,12 @@ ALTER TABLE `contrat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `fonction`
 --
 ALTER TABLE `fonction`
@@ -305,7 +332,7 @@ ALTER TABLE `fonction`
 -- AUTO_INCREMENT for table `incident`
 --
 ALTER TABLE `incident`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `prestataire`

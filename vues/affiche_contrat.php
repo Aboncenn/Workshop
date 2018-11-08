@@ -1,6 +1,10 @@
 <?php
 require('../db/header.php');
+<<<<<<< HEAD
 require('../db/db.php');
+=======
+require('../db/db.php')
+>>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
 
 //Récupération dans la base
 $recuperationContrat = $db->query("SELECT name, file_url FROM contrat WHERE 'type'='ContratAmiable'");
@@ -8,6 +12,10 @@ while($data = $recuperationContrat->fetch()){
   echo $data['name'].' : '.'<a href="'.$data['file_url'].'"> Télécharger'.$data['name'].'</a><br/>';
 }
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
 /*
 Affiche la totalité de la blockchain
 */
@@ -49,7 +57,11 @@ if($user == "1" || $user == "2"){
 </div>
 <?php
 }else{
+<<<<<<< HEAD
   header('Location: localhost:8888/Workshop/vues/');
+=======
+  header('Location: ../vues/index.php');
+>>>>>>> 559e129e0e2355911ec9b33a1e29743c4c511411
   exit();
 }
 require('../db/footer.php');

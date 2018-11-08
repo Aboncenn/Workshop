@@ -37,29 +37,28 @@ if($user == "1" ){ // Home client
 
 }elseif($user == "2" ){ // Home assureur
 ?>
-<<<<<<< HEAD
 <div class="container-fluid">
   <div class="card-body">
-      <h1 class="card-title text-center">Element</h1>
+      <h1 class="card-title text-center">Liste des accidents en cours</h1>
   </div>
   <div class="row">
     <?php
-    $sql="SELECT * FROM incident WHERE id_assureur ='$id'";
+    $sql="SELECT * FROM user,contrat, bien WHERE user.id = contrat.id_user AND id_assureur =2 AND bien.id = contrat.id_biens GROUP BY contrat.id_biens ";
     $req = $db->prepare($sql);
     $req->execute();
-    $car = $req->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($car as $key => $value) {
-      $id_car = $value['id_biens'];
+    $res = $req->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($res as $key => $value) {
+      $id = $value['id'];
+      $nom = $value['nom'];
+      $data = $value['date'];
+      $intitule = $value['intitule'];
       ?>
       <div class="col-4 bien">
           <div class="card">
-              <a href="accident.php?id=<?php echo $id_car; ?>">
-                  <div class="card-body text-center">
-                      <h6>Voiture :</h6>
-                      <img class="bien-icn" src="../img/car.svg" />
-                      <span> Selectionnez un accident</span>
-                  </div>
-              </a>
+                <div class="row">
+                    <p> <?php echo $nom; ?> <?php echo $data; ?> <?php echo $intitule; ?><a href="accident.php?id=<?php echo $id; ?>"> <button> répondre </button></a> </p>
+                </div>
+
           </div>
       </div>
       <?php
@@ -99,18 +98,6 @@ if($user == "1" ){ // Home client
   </div>
 </div>
 <?php
-=======
-        <div class="container-fluid">
-
-        </div>
-        <?php
-}elseif($user == "3"){// Home prestataire
-?>
-        <div class="container-fluid">
-
-        </div>
-        <?php
->>>>>>> 3da796e6be9d2e00f17b94077f683dae81594114
   }else{
    header('Location: localhost:8888/Workshop/vues/index.php');
     exit();

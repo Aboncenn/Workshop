@@ -36,7 +36,7 @@ if($user == "1" ){ // Home client
 }elseif($user == "2" ){ // Assureur
   ?>
   <div class="container-fluid">
-    <h3> Déclarer un accident </h3>
+    <h3> Définir un prestataire pour un accident </h3>
     <form method="post" action="../controller/declarerIncident.php">
       <input name="user" type="hidden" value=<?php echo $id_user?>>
       <input name="bien" type="hidden" value=<?php echo $id_bien?>>
@@ -52,6 +52,9 @@ if($user == "1" ){ // Home client
       <br/>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <h3> Définir un prestataire pour un accident </h3>
+
 <?php
 }elseif($user == "3" ){ // prestataire
   ?>

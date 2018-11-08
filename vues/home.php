@@ -3,18 +3,10 @@ require('../db/header.php');
 require('../db/nav.php');
 /*
 POUR LIVIO => Ajouter le nom du controller en début de pages
-
-IF Prestataire
-Affiche la home des prestataires
-
-
-IF ASSUREUR
-affiche la home des assureurs
 */
 $user = $_SESSION['user'];
 $id = $_SESSION['id'];
 if($user == "1" ){ // Home client
-  var_dump($_SESSION['id']);
 ?>
 <div class="container-fluid">
   <div class="card-body">
@@ -22,9 +14,13 @@ if($user == "1" ){ // Home client
   </div>
   <div class="row">
     <?php
-    $req = $db->prepare("SELECT * FROM contrat WHERE id_users = '$id'");
+    $sql="SELECT * FROM contrat WHERE id_user ='$id'";
+    $req = $db->prepare($sql);
     $req->execute();
-    ?>
+    $car = $req->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($car);
+    foreach ($car as $key => $value) {?>
+
       <div class="col-4 bien">
           <div class="card">
               <a href="">
@@ -35,9 +31,8 @@ if($user == "1" ){ // Home client
               </a>
           </div>
       </div>
-  </div>
-</div>
-<?php
+    <?php }
+
 }elseif($user == "2" ){ // Home assureur
 ?>
 <div class="container-fluid">

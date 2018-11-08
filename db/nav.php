@@ -4,7 +4,7 @@
 <body>
 <?php
 $user = $_SESSION['user'];
-if($user == "client" ){
+if($user == "1" ){ // Home client
 ?>
 
 <div class="card text-center">
@@ -29,7 +29,7 @@ if($user == "client" ){
 </div>
 <?php
 
-}elseif($user == "assureur" ){
+}elseif($user == "2" ){// Home assureur
   ?>
   <div class="card text-center">
     <div class="card-header">
@@ -52,7 +52,7 @@ if($user == "client" ){
     </div>
   </div>
 <?php
-}elseif($user == "prestataire"){
+}elseif($user == "3"){// Home prestataire
 ?>
 <div class="card text-center">
   <div class="card-header">

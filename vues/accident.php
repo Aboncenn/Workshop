@@ -5,7 +5,7 @@ FORM déclaration accident
 */
 
 $user = $_SESSION['user'];
-if($user == "client" ){
+if($user == "1" ){ // Home client
 
 ?>
 <div class="container-fluid">

@@ -4,11 +4,7 @@ require('../db/header.php');
   $email = $_POST['email'];
   $mdp = $_POST['password'];
   $req = $db->prepare('SELECT * FROM user WHERE (mail = :mail)');
-  $req->execute(
-    array(
-      'mail' => $email,
-      )
-    );
+  $req->execute();
   $req->setFetchMode(PDO::FETCH_OBJ);
   $donnees = $req->fetch();
   $res = $req->rowCount();

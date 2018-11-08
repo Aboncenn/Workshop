@@ -39,23 +39,44 @@ if($user == "1" ){ // Home client
   $req = $db->prepare($sql);
   $req->execute();
   $contrat = $req->fetchAll(PDO::FETCH_ASSOC);
-
+$id = $contrat[0]["id"];
 $status = $contrat[0]["id_status"];
 $id_user = $contrat[0]['id_user'];
 $id_bien = $contrat[0]['id_bien'];
 $id_assureur=$contrat[0]['id_bien'];
 $description = $contrat[0]['description'];
-if($status == 1){
+$acte_prestation = $contrat[0]['acte_de_prestation'];
 ?>
 <div class="container-fluid">
   <h3> Définir un prestataire pour un accident </h3>
   <form method="post" action="../controller/declarerIncident.php">
+    <input name="id" type="hidden" value=<?php echo $id?>>
     <input name="user" type="hidden" value=<?php echo $id_user?>>
     <input name="bien" type="hidden" value=<?php echo $id_bien?>>
     <input name="assureur" type="hidden" value=<?php echo $id_assureur?>>
     <div class="form-group">
       <label for="exampleInputEmail1">Description</label>
       <textarea type="text" class="form-control" name="description" value=<?php echo $description?> placeholder="Description de l'incident" required><?php echo $description?> </textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Actes de prestations</label>
+      <textarea type="text" class="form-control" name="prestations_faites" placeholder="Actes de prestations faites par le sous traitant" required><?php echo $acte_prestation?></textarea>
+    </div>
+    <div class="form-group">
+      <?php
+      $sql="SELECT * FROM prestataire";
+      $req = $db->prepare($sql);
+      $req->execute();
+      $prestataire = $req->fetchAll(PDO::FETCH_ASSOC);
+      ?>
+      <label>Prestataire :</label>
+             <select name="prestataire" class="form-control" style="width: 100%;"required>
+               <option selected value=''>S&#233;l&#233;ctionnez</option>
+               <?php
+                 foreach($prestataire as $key => $value){
+                   echo'<option value="'. $value['id'].'">'; echo $value['nom'];?></option>
+                  <?php } ?>
+             </select>
     </div>
     <div class="form-group">
       <?php
@@ -76,35 +97,7 @@ if($status == 1){
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
 <?php
-}elseif($status == 2){
-
-  ?>
-  <div class="container-fluid">
-    <h3> Définir un prestataire pour un accident </h3>
-    <form method="post" action="../controller/declarerIncident.php">
-      <input name="user" type="hidden" value=<?php echo $id_user?>>
-      <input name="bien" type="hidden" value=<?php echo $id_bien?>>
-      <input name="assureur" type="hidden" value=<?php echo $id_assureur?>>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Description</label>
-        <textarea type="text" class="form-control" name="description" value=<?php echo $description?> placeholder="Description de l'incident" required><?php echo $description?> </textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Liste des prestations</label>
-        <textarea type="text" class="form-control" name="prestations" placeholder="Listes des actes faits par vous" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Liste des prestations</label>
-        <textarea type="text" class="form-control" name="prestations" placeholder="Listes des actes faits par vous" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-
-<?php
-}
 }elseif($user == "3" ){ // prestataire
   ?>
   <div class="container-fluid">
@@ -116,6 +109,10 @@ if($status == 1){
       <div class="form-group">
         <label for="exampleInputEmail1">Description</label>
         <textarea type="text" class="form-control" name="description" placeholder="Description de l'incident" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Actes de prestations</label>
+        <textarea type="text" class="form-control" name="prestations_faites" placeholder="Description de l'incident" required></textarea>
       </div>
       <label for="constat"> Joindre Constat à l'amiable:</label>
       <input type ="file" name="constat" id="constat"/>

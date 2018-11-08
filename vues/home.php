@@ -80,16 +80,16 @@ if($user == "1" ){ // Home client
       $req->execute();
       $car = $req->fetchAll(PDO::FETCH_ASSOC);
       foreach ($car as $key => $value) {
-        $id_car = $value['id_biens'];
+          $id = $value['id'];
         ?>
 
         <div class="col-4 bien">
             <div class="card">
-                <a href="accident.php?id=<?php echo $id_car; ?>">
+                <a href="accident.php?id=<?php echo $id; ?>">
                     <div class="card-body text-center">
                         <h6>Voiture :</h6>
                         <img class="bien-icn" src="../img/car.svg" />
-                        <span> Selectionnez un accident</span>
+                        <span> Selectionnez un contrat</span>
                     </div>
                 </a>
             </div>

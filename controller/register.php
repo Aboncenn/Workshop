@@ -1,27 +1,31 @@
 <?php
-session_start ();
-if(isset($_POST['email'])&& isset($_POST['password'])){
-   $mailconnect = isset($_POST['email']);
-   $mdpconnect = isset($_POST['password']);
-   if(!empty($mailconnect) AND !empty($mdpconnect)) {
-      $requser = $db->prepare("SELECT * FROM user WHERE mail = ? AND mot_de_passe = ?");
-      $requser->execute(array($mailconnect, $mdpconnect));
-      $userexist = $requser->rowCount();
-      if($userexist == 1) {
-         $userinfo = $requser->fetch();
-         $_SESSION['user'] = $userinfo['user'];
-         $_SESSION['pseudo'] = $userinfo['pseudo'];
-         $_SESSION['mail'] = $userinfo['mail'];
-         header("Location: home.php?id=".$_SESSION['id']);
-      } else {
-         $erreur = "Mauvais mail ou mot de passe !";
-      }
-   } else {
-      $erreur = "Tous les champs doivent être complétés !";
-   }
-}
-
-if(isset($erreur)) {
-   echo '<font color="red">'.$erreur."</font>";
-}
+require '../db/session.php';
+require('../db/header.php');
+  $email = $_POST['email'];
+  $mdp = $_POST['password'];
+  $req = $db->prepare('SELECT * FROM user WHERE (mail = :mail)');
+  $req->execute(
+    array(
+      'mail' => $email,
+      )
+    );
+  $req->setFetchMode(PDO::FETCH_OBJ);
+  $donnees = $req->fetch();
+  $res = $req->rowCount();
+  if(($res) != 0){
+    if(($mdp == $donnees->mot_de_passe)){
+    $_SESSION["user"] = $donnees->id_fonction;
+      ?>
+      <p>Vous êtes connecté ! <a href="../vues/home.php">go to home</a> </p>
+      <?php
+    }else{
+      ?>
+      <p>Mauvais mot de passe, recommencez <a href="../vues/index.php">Rentourner à la connexion </a> </p>
+      <?php
+    }
+  }else{
+    ?>
+    <p>Ce pseudo n'existe pas <a href="../vues/index.php">Rentourner à la connexion </a> </p>
+    <?php
+  }
 ?>
